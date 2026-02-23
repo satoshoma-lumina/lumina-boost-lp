@@ -86,98 +86,82 @@
           </div>
         </div>
 
-        <!-- FV Graphic (0.3秒でヘッドハンティングを想起させる図解) -->
+        <!-- FV Graphic (スッキリ見やすい中心アプローチ図解) -->
         <div class="flex-1 w-full max-w-lg lg:max-w-full relative">
           <!-- 背景の光 -->
           <div class="absolute inset-0 bg-gradient-to-tr from-orange-500 to-red-500 rounded-[2.5rem] blur-3xl opacity-20 transform -rotate-3"></div>
           
-          <div class="relative w-full aspect-square sm:aspect-[4/3] bg-white rounded-[2.5rem] p-4 sm:p-8 shadow-2xl border border-orange-100 overflow-hidden">
+          <div class="relative w-full aspect-square sm:aspect-[4/3] bg-white rounded-[2.5rem] shadow-2xl border border-orange-100 overflow-hidden">
              
-             <!-- 背景の装飾 -->
-             <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-50">
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-orange-50 rounded-full blur-3xl"></div>
+             <!-- エリアを示す背景の大きな円 -->
+             <div class="absolute inset-0 m-auto w-[90%] sm:w-[85%] aspect-square rounded-full border-2 border-dashed border-orange-300 bg-orange-50/40 z-0"></div>
+             
+             <div class="absolute top-[4%] left-1/2 -translate-x-1/2 text-[10px] sm:text-xs font-bold text-orange-600 bg-white px-3 py-1 rounded-full border border-orange-200 shadow-sm z-10 whitespace-nowrap">
+               〇〇エリアの多数の美容師
              </div>
 
-             <!-- FV Graphic (顧客起点のヘッドハンティング図解) -->
+             <!-- アプローチの放射線（最背面: テキスト等に被らない） -->
+             <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M 50 50 L 20 20" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <path d="M 50 50 L 80 20" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <path d="M 50 50 L 10 50" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <path d="M 50 50 L 90 50" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <path d="M 50 50 L 25 80" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <path d="M 50 50 L 75 80" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
+                <!-- 成功した美容師への強調線 -->
+                <path d="M 50 50 L 75 30" fill="none" stroke="#f97316" stroke-width="0.8" stroke-dasharray="2 2" class="opacity-100 animate-pulse" />
+             </svg>
+
+             <!-- 美容師たち（円の内外に配置・z-10） -->
+             <!-- top-left (20, 20) -->
+             <div class="absolute top-[20%] left-[20%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400"></i></div></div>
+             <!-- top-right (80, 20) -->
+             <div class="absolute top-[20%] left-[80%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-1.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 text-slate-400"></i></div></div>
+             <!-- mid-left (10, 50) -->
+             <div class="absolute top-[50%] left-[10%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-2.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-5 h-5 text-slate-400"></i></div></div>
+             <!-- mid-right (90, 50) -->
+             <div class="absolute top-[50%] left-[90%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 text-slate-400"></i></div></div>
+             <!-- bottom-left (25, 80) -->
+             <div class="absolute top-[80%] left-[25%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 text-slate-400"></i></div></div>
+             <!-- bottom-right (75, 80) -->
+             <div class="absolute top-[80%] left-[75%] z-10 -translate-x-1/2 -translate-y-1/2"><div class="bg-white p-2.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-5 h-5 text-slate-400"></i></div></div>
+
+             <!-- 反応した美容師 (75, 30) -->
+             <div class="absolute top-[30%] left-[75%] z-20 -translate-x-1/2 -translate-y-1/2">
+               <div class="bg-gradient-to-br from-orange-500 to-red-500 p-2.5 sm:p-3 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.4)] animate-bounce" style="animation-duration: 2.5s;">
+                 <i data-lucide="user-check" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+               </div>
+             </div>
+
+
+             <!-- 中央のコンテンツ群（Z-20、縦一列に配置して被りを防止） -->
              <div class="relative z-20 w-full h-full flex flex-col items-center justify-center">
                 
-                <!-- LUMINAスカウト（上部） -->
-                <div class="absolute top-[5%] sm:top-[8%] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center w-full">
-                   <div class="bg-slate-900 p-3 sm:p-4 rounded-2xl shadow-xl border border-slate-700 relative group flex items-center gap-2">
-                     <i data-lucide="headset" class="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 group-hover:scale-110 transition-transform"></i>
-                     <div class="text-left hidden sm:block">
-                       <span class="block text-[9px] text-orange-400 font-bold leading-tight">我々が代行</span>
-                       <span class="block text-xs text-white font-black tracking-wider">LUMINAスカウト</span>
-                     </div>
-                     <div class="absolute -top-3 -right-3 sm:hidden bg-orange-500 text-white text-[10px] font-black px-2 py-1 rounded-full shadow-md whitespace-nowrap">
-                       代行
-                     </div>
-                   </div>
-                   <div class="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold text-orange-600 shadow-sm border border-orange-200 whitespace-nowrap mt-3 flex items-center gap-1">
-                      <i data-lucide="mic" class="w-3.5 h-3.5"></i> エリアの美容師【全員】に直接アプローチ
+                <!-- LUMINAスカウト -->
+                <div class="bg-slate-900 px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-700">
+                   <i data-lucide="headset" class="w-5 h-5 sm:w-6 sm:h-6 text-orange-400"></i>
+                   <div class="flex flex-col text-left">
+                      <span class="text-[9px] sm:text-[10px] text-orange-400 font-bold leading-none mb-1">我々が代行</span>
+                      <span class="text-xs sm:text-sm font-black text-white tracking-wide leading-none">LUMINAスカウト</span>
                    </div>
                 </div>
 
-                <!-- ターゲットエリアの円と美容師たち -->
-                <div class="absolute bottom-[5%] sm:bottom-[10%] left-1/2 -translate-x-1/2 w-[85%] sm:w-[75%] aspect-square bg-orange-50/40 rounded-full border-2 border-dashed border-orange-300 flex items-center justify-center z-10">
+                <!-- アプローチ説明バッジ -->
+                <div class="bg-white/95 backdrop-blur px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-orange-600 shadow-md border border-orange-200 flex items-center gap-1.5 my-3 sm:my-4">
+                   <i data-lucide="mic" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> エリアの美容師【全員】に直接アプローチ
+                </div>
+
+                <!-- 中心：あなたのお店 -->
+                <div class="relative mt-1 sm:mt-2">
+                   <!-- 波紋エフェクト -->
+                   <div class="absolute inset-0 m-auto w-24 h-24 sm:w-28 sm:h-28 border-2 border-orange-500/40 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
                    
-                   <!-- 美容師たち（円の内外に配置） -->
-                   <!-- top-left -->
-                   <div class="absolute top-[10%] left-[20%]"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400"></i></div></div>
-                   <!-- top-right -->
-                   <div class="absolute top-[15%] right-[15%]"><div class="bg-white p-1.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 text-slate-400"></i></div></div>
-                   <!-- mid-left -->
-                   <div class="absolute top-[45%] left-[-5%]"><div class="bg-white p-2.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"></i></div></div>
-                   <!-- mid-right -->
-                   <div class="absolute top-[50%] right-[-2%]"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400"></i></div></div>
-                   <!-- bottom-left -->
-                   <div class="absolute bottom-[20%] left-[15%]"><div class="bg-white p-2 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400"></i></div></div>
-                   <!-- bottom-right -->
-                   <div class="absolute bottom-[15%] right-[25%]"><div class="bg-white p-2.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"></i></div></div>
-                   <!-- bottom-center -->
-                   <div class="absolute bottom-[5%] left-[45%]"><div class="bg-white p-1.5 rounded-full shadow-sm border border-slate-200"><i data-lucide="user" class="w-3 h-3 sm:w-4 sm:h-4 text-slate-400"></i></div></div>
-
-                   <!-- 反応した美容師（ヘッドハント成功イメージ） -->
-                   <div class="absolute top-[30%] left-[65%] z-20">
-                     <div class="bg-gradient-to-br from-orange-500 to-red-500 p-2 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.4)] animate-bounce" style="animation-duration: 2.5s;">
-                       <i data-lucide="user-check" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
-                     </div>
-                   </div>
-                   <div class="absolute bottom-[35%] left-[25%] z-20">
-                     <div class="bg-gradient-to-br from-orange-500 to-red-500 p-2 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.4)] animate-bounce" style="animation-duration: 2s; animation-delay: 0.5s;">
-                       <i data-lucide="user-check" class="w-4 h-4 sm:w-5 sm:h-5 text-white"></i>
-                     </div>
-                   </div>
-
-                   <!-- 中心：あなたのお店 -->
-                   <div class="relative z-30 flex flex-col items-center justify-center mt-2">
-                      <!-- 波紋エフェクト -->
-                      <div class="absolute w-24 h-24 sm:w-32 sm:h-32 border-2 border-orange-500/30 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                      
-                      <div class="bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] border-4 border-orange-500 relative group flex flex-col items-center justify-center transform hover:scale-105 transition-transform z-10">
-                        <i data-lucide="building-2" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-800"></i>
-                        <div class="absolute -bottom-4 bg-slate-800 text-white text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap">
-                          あなたのお店
-                        </div>
-                      </div>
+                   <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] border-2 sm:border-4 border-slate-800 flex flex-col items-center justify-center relative z-10 transform hover:scale-105 transition-transform">
+                      <i data-lucide="building-2" class="w-8 h-8 sm:w-10 sm:h-10 text-slate-800 mb-1.5"></i>
+                      <span class="text-[10px] sm:text-xs font-black text-slate-800 bg-slate-100 px-2 py-0.5 rounded">あなたのお店</span>
                    </div>
                 </div>
 
-                <!-- アプローチの放射線（SVG） -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-                   <!-- LUMINA(50, 25) から各美容師へ -->
-                   <path d="M 50 25 L 35 45" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 65 45" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 15 65" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 85 65" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 25 85" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 75 85" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   <path d="M 50 25 L 50 95" fill="none" stroke="#f97316" stroke-width="0.3" stroke-dasharray="1 1.5" class="opacity-60" />
-                   
-                   <!-- 反応した美容師への線 (少し太め) -->
-                   <path d="M 50 25 L 65 55" fill="none" stroke="#f97316" stroke-width="0.6" stroke-dasharray="2 2" class="opacity-100 animate-pulse" />
-                   <path d="M 50 25 L 35 75" fill="none" stroke="#f97316" stroke-width="0.6" stroke-dasharray="2 2" class="opacity-100 animate-pulse" />
-                </svg>
              </div>
 
           </div>
